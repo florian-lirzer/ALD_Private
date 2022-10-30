@@ -1,6 +1,6 @@
 package A02_Queue;
 
-// TODO: Bitte Ihren Namen und Datum einfügen
+// TODO: Florian Lirzer 30.10.2022
 
 public class Node<T>
 {
