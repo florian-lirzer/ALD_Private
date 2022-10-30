@@ -56,7 +56,7 @@ public class TestStack {
 		s.push(5);
 		s.push(6);
 		assertEquals("Sechs", 6, (int)s.pop());
-		assertEquals("Fünf", 5,(int) s.pop());
+		assertEquals("FÃ¼nf", 5,(int) s.pop());
 		assertEquals("Zwei", 2,(int) s.pop());
 		assertEquals("Eins", 1,(int) s.pop());
 		s.push(7);
