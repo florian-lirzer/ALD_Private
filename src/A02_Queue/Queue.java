@@ -5,24 +5,48 @@ public class Queue<T>
     private Node<T> first;
     
     private Node<T> last;
+
+    private int counter;
     /**
-     * Das vorderste (=erste) Element aus der Queue entfernen und zurückliefern.
-     * Existiert kein Element, wird eine Exception ausgelöst.
+     * Das vorderste (=erste) Element aus der Queue entfernen und zurï¿½ckliefern.
+     * Existiert kein Element, wird eine Exception ausgelï¿½st.
      * @throws QueueEmptyException 
      */
     public T dequeue() throws QueueEmptyException {
+        if(counter <= 0)
+            throw new QueueEmptyException();
+        counter--;
 
-    	return null;
+        T element = first.getData();
+        first = first.getNext();
+    	return element;
     }
     
     
     
     /**
-     * Übergebenen Integer am Ende der Queue anhängen.
+     * ï¿½bergebenen Integer am Ende der Queue anhï¿½ngen.
      * @param i Zahl
      */
     public void enqueue(T i) {
 
+        Node<T> newNode = new Node<>(i);
+        if (counter == 0)
+        {
+            first = newNode;
+        }
+        if(counter == 1)
+        {
+            last = newNode;
+            first.setNext(last);
+        }
+        if(counter > 1)
+        {
+            last.setNext(newNode);
+            last = newNode;
+        }
+
+        counter++;
     }
     
     /**
@@ -30,6 +54,6 @@ public class Queue<T>
      * @return
      */
     public int getCount() {
-    	return 0;
+    	return counter;
     }
 }
