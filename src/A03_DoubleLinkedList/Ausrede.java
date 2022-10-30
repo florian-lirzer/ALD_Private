@@ -1,5 +1,6 @@
 package A03_DoubleLinkedList;
 
+// TODO: Bitte Ihren Namen und Datum einfügen
 public class Ausrede
 {
     private final String ausrede;

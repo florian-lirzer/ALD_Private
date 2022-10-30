@@ -1,4 +1,4 @@
-package A01_Stack;
+package A02_Queue;
 
 // TODO: Bitte Ihren Namen und Datum einfügen
 
