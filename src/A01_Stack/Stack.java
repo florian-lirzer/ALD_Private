@@ -15,11 +15,13 @@ public class Stack<T>
             throw new StackEmptyException();
 
         counter--;
-        T element = first.getData();
 
+        Node<T> element = first;
         first = first.getNext();
 
-        return element;
+        element.setNext(null);
+
+        return element.getData();
     }
     
     /**
@@ -28,15 +30,8 @@ public class Stack<T>
      */
     public void push(T i) {
         Node<T> newNode = new Node<>(i);
-        if(counter == 0)
-        {
-            first = newNode;
-        }
-        else
-        {
-            newNode.setNext(first);
-            first = newNode;
-        }
+        newNode.setNext(first);
+        first = newNode;
         counter++;
     }
     
