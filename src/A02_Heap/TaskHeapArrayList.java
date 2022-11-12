@@ -23,7 +23,8 @@ import java.util.ArrayList;public class TaskHeapArrayList {
 	 */
 	public void insert(Task t) {
 		// TODO: Your implementation
-
+		tasks.add(t);
+		swim(tasks.size()-1);
 	}
 
 	/**
@@ -32,8 +33,15 @@ import java.util.ArrayList;public class TaskHeapArrayList {
 	 * @return Task mit kleinster Priorität
 	 */
 	public Task remove() {
-		// TODO: Your implementation
-		return null;
+		if(tasks.size() <= 1)
+			return null;
+		Task task = tasks.get(1);
+		tasks.set(1, tasks.get(tasks.size()-1));
+		tasks.remove(tasks.size()-1);
+
+		sink(1);
+
+		return task;
 	}
 
 	private void swim(int pos) {
